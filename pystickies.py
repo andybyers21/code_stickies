@@ -9,14 +9,18 @@ class Menubar:
         parent.master.config(menu=menubar)
 
         file_dropdown = tk.Menu(menubar, font=font_spec, tearoff=0)
-        file_dropdown.add_command(label="New")
-        file_dropdown.add_command(label="Open")
+        file_dropdown.add_command(label="New",
+                                  command=parent.new_file)
+        file_dropdown.add_command(label="Open",
+                                  command=parent.open_file)
         file_dropdown.add_separator()
-        file_dropdown.add_command(label="Save")
-        file_dropdown.add_command(label="Save As")
+        file_dropdown.add_command(label="Save",
+                                  command=parent.save_file)
+        file_dropdown.add_command(label="Save As",
+                                  command=parent.save_file_as)
         file_dropdown.add_separator()
-        file_dropdown.add_command(label="Quit")
-
+        file_dropdown.add_command(label="Quit",
+                                  command=parent.master.destroy)
         menubar.add_cascade(label="File", menu=file_dropdown)
 
 
@@ -37,6 +41,21 @@ class Main:
         self.scroll.pack(side=tk.RIGHT, fill=tk.Y)
 
         self.menubar = Menubar(self)
+
+    def set_window_title(self):
+        pass
+
+    def new_file(self):
+        pass
+
+    def open_file(self):
+        pass
+
+    def save_file(self):
+        pass
+
+    def save_file_as(self):
+        pass
 
 
 # Init root window

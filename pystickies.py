@@ -44,32 +44,55 @@ class Core:
 
         self.menubar = Menubar(self)
 
-    def set_window_title(self):
-        pass
+    def set_window_title(self, name=None):
+        if name:
+            self.master.title(name)
+        else:
+            self.master.title("Untitled")
 
     def new_file(self):
-        pass
+        self.textarea.delete(1.0, tk.END)
+        self.filename = None
+        self.set_window_title()
 
     def open_file(self):
         self.filename = filedialog.askopenfilename(
             defaultextension=".txt",
             filetypes=[("All Files", "*.*"),
-                       ("CSS Files", "*.css"),
-                       ("HTML Files", "*.html"),
-                       ("Javascript Files", "*.js"),
-                       ("Markdown files", "*.md"),
-                       ("Python Files", "*.py"),
-                       ("Text Files", "*.txt")])
+                       ("CSS", "*.css"),
+                       ("HTML", "*.html"),
+                       ("Javascript", "*.js"),
+                       ("Markdown", "*.md"),
+                       ("Python", "*.py"),
+                       ("Text", "*.txt")])
         if self.filename:
             self.textarea.delete(1.0, tk.END)
             with open(self.filename, "r") as f:
                 self.textarea.insert(1.0, f.read())
+                self.set_window_title(self.filename)
 
     def save_file(self):
         pass
 
     def save_file_as(self):
-        pass
+        try:
+            new_file = filedialog.asksaveasfilename(
+                initialfile="Untitled.txt",
+                defaultextension=".txt",
+                filetypes=[("All Files", "*.*"),
+                           ("CSS", "*.css"),
+                           ("HTML", "*.html"),
+                           ("Javascript", "*.js"),
+                           ("Markdown", "*.md"),
+                           ("Python", "*.py"),
+                           ("Text", "*.txt")])
+            textarea_content = self.textarea.get(1.0, tk.END)
+            with open(new_file, "w") as f:
+                f.write(textarea_content)
+            self.filename = new_file
+            self.set_window_title(self.filename)
+        except Exception as e:
+            print(e)
 
 
 # Init root window

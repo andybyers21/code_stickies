@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import filedialog
 
 
-class Menubar:
+class MenuBar:
     def __init__(self, parent):
         font_spec = ("", 14)
 
@@ -42,7 +42,8 @@ class Core:
         self.textarea.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
         self.scroll.pack(side=tk.RIGHT, fill=tk.Y)
 
-        self.menubar = Menubar(self)
+        self.menubar = MenuBar(self)
+        self.statusbar = StatusBar(self)
 
     def set_window_title(self, name=None):
         if name:
@@ -101,6 +102,21 @@ class Core:
             self.set_window_title(self.filename)
         except Exception as e:
             print(e)
+
+
+class StatusBar:
+
+    def __init__(self, parent):
+
+        font_spec = ("", 11)
+
+        self.status = tk.StringVar()
+        self.status.set("code_stickies - 0.1")
+
+        label = tk.Label(parent.textarea, textvariable=self.status,
+                         fg="black", bg="grey", anchor='sw', font=font_spec)
+
+        label.pack(side=tk.BOTTOM, fill=tk.BOTH)
 
 
 # Init root window

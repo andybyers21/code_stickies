@@ -6,21 +6,20 @@ Sticky notes for code
 2. How to Install
 3. How to Use
 
-# Features:
+Features:
+=========
+- Reactive Status Bar
+- Keyboard Shortcuts
+- Popups
 
-    - Reactive Status Bar
-    - Keyboard Shortcuts
-    - Popups
-
-# Supports
-
-    - CSS Files
-    - HTML Files
-    - Javascript Files
-    - Markdown files
-    - Python Files
-    - Text Files
+Supports:
+=========
+- CSS Files
+- HTML Files
+- Javascript Files
+- Markdown files
+- Python Files
+- Text Files
 
 (WIP)
 V - 0.1.0
-

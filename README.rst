@@ -6,14 +6,14 @@ Sticky notes for code
 2. How to Install
 3. How to Use
 
-Features:
-=========
+# Features:
+
 - Reactive Status Bar
 - Keyboard Shortcuts
 - Popups
 
-Supports:
-=========
+# Supports:
+
 - CSS Files
 - HTML Files
 - Javascript Files
@@ -22,4 +22,4 @@ Supports:
 - Text Files
 
 (WIP)
-V - 0.1.0
+0.1.0

@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import filedialog
 
 
 class Menubar:
@@ -24,7 +25,7 @@ class Menubar:
         menubar.add_cascade(label="File", menu=file_dropdown)
 
 
-class Main:
+class Core:
 
     def __init__(self, master):
         master.title("Untitled")
@@ -33,6 +34,7 @@ class Main:
         font_spec = ("", 20)
 
         self.master = master
+        self.filename = None
 
         self.textarea = tk.Text(master, font=font_spec)
         self.scroll = tk.Scrollbar(master, command=self.textarea.yview)
@@ -49,7 +51,19 @@ class Main:
         pass
 
     def open_file(self):
-        pass
+        self.filename = filedialog.askopenfilename(
+            defaultextension=".txt",
+            filetypes=[("All Files", "*.*"),
+                       ("CSS Files", "*.css"),
+                       ("HTML Files", "*.html"),
+                       ("Javascript Files", "*.js"),
+                       ("Markdown files", "*.md"),
+                       ("Python Files", "*.py"),
+                       ("Text Files", "*.txt")])
+        if self.filename:
+            self.textarea.delete(1.0, tk.END)
+            with open(self.filename, "r") as f:
+                self.textarea.insert(1.0, f.read())
 
     def save_file(self):
         pass
@@ -61,5 +75,5 @@ class Main:
 # Init root window
 if __name__ == '__main__':
     master = tk.Tk()
-    pt = Main(master)
+    pt = Core(master)
     master.mainloop()

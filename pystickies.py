@@ -126,27 +126,26 @@ class MenuBar:
 
     def about_message(self):
         box_title = "About code_stickies"
-        box_message = ("Sticky notes for code."
+        box_message = ("Sticky notes for code. \n"
                        "Developed by Andy Byers, 2020")
         messagebox.showinfo(box_title, box_message)
 
     def release_message(self):
         box_title = "Release Notes"
-        box_message = ("Version - 0.1"
+        box_message = ("Version - 0.1 \n"
                        "14th September, 2020")
         messagebox.showinfo(box_title, box_message)
 
 
 class StatusBar:
-    # default_status = "code_stickies - 0.1"
-    # TODO: default_status is not recognised within __init__() or update_status?
+    default_status = "code_stickies - 0.1"
 
     def __init__(self, parent):
 
         font_spec = ("", 11)
 
         self.status = tk.StringVar()
-        self.status.set("default_status")
+        self.status.set(self.default_status)
 
         label = tk.Label(parent.textarea, textvariable=self.status,
                          fg="black", bg="grey", anchor='sw', font=font_spec)
@@ -157,7 +156,7 @@ class StatusBar:
         if isinstance(args[0], bool):
             self.status.set("Saved")
         else:
-            self.status.set("default_status")
+            self.status.set(self.default_status)
 
 
 # Init root window

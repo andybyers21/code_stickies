@@ -1,12 +1,18 @@
-# Sticky notes for code
+=====================
+Sticky notes for code
+=====================
 
-## Features:
+1. Description
+2. How to Install
+3. How to Use
+
+# Features:
 
     - Reactive Status Bar
     - Keyboard Shortcuts
     - Popups
 
-## Supports
+# Supports
 
     - CSS Files
     - HTML Files
@@ -16,4 +22,5 @@
     - Text Files
 
 (WIP)
-V - 0.1
+V - 0.1.0
+

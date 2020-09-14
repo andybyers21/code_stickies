@@ -3,3 +3,5 @@
 Here is some more text in my test file.
 
 - Just testing the keybindings
+
+Testing .rst support

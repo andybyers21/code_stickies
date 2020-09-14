@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
 from tkinter import filedialog
+__version__ = "0.1.0"
 
 
 class Core:
@@ -45,6 +46,7 @@ class Core:
                        ("Javascript", "*.js"),
                        ("Markdown", "*.md"),
                        ("Python", "*.py"),
+                       ("ReStructured Text", "*.rst"),
                        ("Text", "*.txt")])
         if self.filename:
             self.textarea.delete(1.0, tk.END)
@@ -75,6 +77,7 @@ class Core:
                            ("Javascript", "*.js"),
                            ("Markdown", "*.md"),
                            ("Python", "*.py"),
+                           ("ReStructured Text", "*.rst"),
                            ("Text", "*.txt")])
             textarea_content = self.textarea.get(1.0, tk.END)
             with open(new_file, "w") as f:

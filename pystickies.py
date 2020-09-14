@@ -138,15 +138,15 @@ class MenuBar:
 
 
 class StatusBar:
-
-    default_status = "code_stickies - 0.1"
+    # default_status = "code_stickies - 0.1"
+    # TODO: default_status is not recognised within __init__() or update_status?
 
     def __init__(self, parent):
 
         font_spec = ("", 11)
 
         self.status = tk.StringVar()
-        self.status.set(default_status)
+        self.status.set("default_status")
 
         label = tk.Label(parent.textarea, textvariable=self.status,
                          fg="black", bg="grey", anchor='sw', font=font_spec)
@@ -157,7 +157,7 @@ class StatusBar:
         if isinstance(args[0], bool):
             self.status.set("Saved")
         else:
-            self.status.set(default_status)
+            self.status.set("default_status")
 
 
 # Init root window

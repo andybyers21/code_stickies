@@ -72,7 +72,15 @@ class Core:
                 self.set_window_title(self.filename)
 
     def save_file(self):
-        pass
+        if self.filename:
+            try:
+                textarea_content = self.textarea.get(1.0, tk.END)
+                with open(self.filename, 'w') as f:
+                    f.write(textarea_content)
+            except Exception as e:
+                print(e)
+        else:
+            self.save_file_as()
 
     def save_file_as(self):
         try:

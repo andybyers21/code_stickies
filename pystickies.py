@@ -5,7 +5,7 @@ __version__ = "0.1.0"
 
 
 class Core:
-    """ Core functionality of the app. """
+    """Core functionality of the app."""
 
     def __init__(self, master):
         """ Set the default layout and geometry of the app. """
@@ -29,20 +29,20 @@ class Core:
         self.bind_shortcuts()
 
     def set_window_title(self, name=None):
-        """ Set window title based on filename. """
+        """Set window title based on filename."""
         if name:
             self.master.title(name)
         else:
             self.master.title("Untitled")
 
     def new_file(self, *args):
-        """ Create a new empty file. """
+        """Create a new empty file."""
         self.textarea.delete(1.0, tk.END)
         self.filename = None
         self.set_window_title()
 
     def open_file(self, *args):
-        """ Open a file. """
+        """Open a file."""
         self.filename = filedialog.askopenfilename(
             defaultextension=".txt",
             filetypes=[("All Files", "*.*"),
@@ -60,7 +60,7 @@ class Core:
                 self.set_window_title(self.filename)
 
     def save_file(self, *args):
-        """ Save an exsisting file """
+        """Save an exsisting file"""
         if self.filename:
             try:
                 textarea_content = self.textarea.get(1.0, tk.END)
@@ -73,7 +73,7 @@ class Core:
             self.save_file_as()
 
     def save_file_as(self, *args):
-        """ Save a new file in one of the predefined formats """
+        """Save a new file in one of the predefined formats"""
         try:
             new_file = filedialog.asksaveasfilename(
                 initialfile="Untitled.txt",
@@ -96,7 +96,7 @@ class Core:
             print(e)
 
     def bind_shortcuts(self):
-        """ Binds keyboard shortcuts for common functionality. """
+        """Binds keyboard shortcuts for common functionality."""
         self.textarea.bind('<Command-n>', self.new_file)
         self.textarea.bind('<Command-o>', self.open_file)
         self.textarea.bind('<Command-s>', self.save_file)
@@ -105,10 +105,10 @@ class Core:
 
 
 class MenuBar:
-    """ Create the menubar and call its functionality. """
+    """Create the menubar and call its functionality."""
 
     def __init__(self, parent):
-        """ Menubar functions. 
+        """Menubar functions. 
 
         File:
         - New
@@ -150,14 +150,14 @@ class MenuBar:
         menubar.add_cascade(label="About", menu=about_dropdown)
 
     def about_message(self):
-        """ Define an about message to be displayed when the menubar item is selected. """
+        """Define an about message to be displayed when the menubar item is selected."""
         box_title = "About code_stickies"
         box_message = ("Sticky notes for code. \n"
                        "Developed by Andy Byers, 2020")
         messagebox.showinfo(box_title, box_message)
 
     def release_message(self):
-        """ Define the release notes message to be displayed when the menubar item is selected. """
+        """Define the release notes message to be displayed when the menubar item is selected."""
         box_title = "Release Notes"
         box_message = ("Version - 0.1 \n"
                        "14th September, 2020")
@@ -165,7 +165,7 @@ class MenuBar:
 
 
 class StatusBar:
-    """ Defines the default displays of the status bar. """
+    """Defines the default displays of the status bar."""
     default_status = "code_stickies - 0.1"
 
     def __init__(self, parent):
@@ -181,7 +181,7 @@ class StatusBar:
         label.pack(side=tk.BOTTOM, fill=tk.BOTH)
 
     def update_status(self, *args):
-        """ Update the display of the status bar based on user actions. """
+        """Update the display of the status bar based on user actions."""
         if isinstance(args[0], bool):
             self.status.set("Saved")
         else:

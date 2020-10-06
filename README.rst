@@ -1,16 +1,16 @@
 =====================
-Sticky notes for code
+A Python Text Editor 
 =====================
 
-1. Description
-2. How to Install
-3. How to Use
+0.1.0
 
-Features:
-=========
+A plain-text editor built using Python and Tkinter. Features:
 - Reactive Status Bar
 - Keyboard Shortcuts
 - Popups
+- Responsive to system themes (dark mode/ light mode)
+
+To install, download the pyText file and launch with `$ python pyText.py`
 
 Supports:
 =========
@@ -21,5 +21,6 @@ Supports:
 - Python Files
 - Text Files
 
-(WIP)
-0.1.0
+Bugs
+====
+- Menu bar unresponsive when first launching the app on MacOS, click off the app and back into it and menubar will work. 

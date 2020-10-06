@@ -151,9 +151,9 @@ class MenuBar:
 
     def about_message(self):
         """Define an about message to be displayed when the menubar item is selected."""
-        box_title = "About code_stickies"
-        box_message = ("Sticky notes for code. \n"
-                       "Developed by Andy Byers, 2020")
+        box_title = "About pyText"
+        box_message = (
+            "A python text editor, developed by Andy Byers using Python and Tkinter, September 2020")
         messagebox.showinfo(box_title, box_message)
 
     def release_message(self):
@@ -166,7 +166,7 @@ class MenuBar:
 
 class StatusBar:
     """Defines the default displays of the status bar."""
-    default_status = "code_stickies - 0.1"
+    default_status = "pyText - 0.1"
 
     def __init__(self, parent):
 

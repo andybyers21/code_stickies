@@ -14,12 +14,13 @@ To install, download the pyText file and launch with `$ python pyText.py`
 
 Supports:
 =========
-- CSS Files
-- HTML Files
-- Javascript Files
-- Markdown files
-- Python Files
-- Text Files
+- CSS Files (.css)
+- HTML Files (.html)
+- Javascript Files (.js)
+- Markdown files (.md)
+- Python Files(.py)
+- reStructuredText (.rst)
+- Text (.txt)
 
 Bugs
 ====
